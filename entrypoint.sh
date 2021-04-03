@@ -10,11 +10,9 @@ check_status() {
     curl -sf "${1}" >/dev/null
 
     if [ ! $? = ${FAIL_CODE} ]; then
-        mkdir $home/docs
-        echo -e "${LGREEN}${1} is online${NC}" >> $home/docs/index.html
+        echo -e "${LGREEN}${1} is online${NC}" >> /index.html
     else
-        mkdir $home/docs
-        echo -e "${LRED}${1} is down${NC}" >> $home/docs/index.html
+        echo -e "${LRED}${1} is down${NC}" >> /index.html
         exit 1
     fi
 }
