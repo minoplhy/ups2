@@ -11,9 +11,11 @@ check_status() {
 
     if [ ! $? = ${FAIL_CODE} ]; then
         echo -e "${LGREEN}${1} is online${NC}"
+        touch index.html
         cat "${1} is online" >> index.html
     else
         echo -e "${LRED}${1} is down${NC}"
+        touch index.html
         cat "${1} is down" >> index.html
         exit 1
     fi
