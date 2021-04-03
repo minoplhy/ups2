@@ -23,6 +23,6 @@ apt-get -y install git
 
 git clone https://github.com/minoplhy/alive-test/
 rm alive-test/index.html
-git add index.html
+git remote add origin https://github.com/minoplhy/alive-test/index.html
 git commit -m "Autorun"
-git push alive-test main
+git push origin main
