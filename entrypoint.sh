@@ -19,7 +19,7 @@ check_status() {
 
 check_status "${1}"
 
-apt-get install git
+apt-get -y install git
 
 git clone https://github.com/minoplhy/alive-test/
 rm alive-test/index.html
