@@ -10,9 +10,9 @@ check_status() {
     curl -sf "${1}" >/dev/null
 
     if [ ! $? = ${FAIL_CODE} ]; then
-        echo -e "${LGREEN}${1} is online${NC}"
+        echo -e "${LGREEN}${1} is online${NC}" >> index.html
     else
-        echo -e "${LRED}${1} is down${NC}"
+        echo -e "${LRED}${1} is down${NC}" >> index.html
         exit 1
     fi
 }
