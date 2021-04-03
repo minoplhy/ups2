@@ -1,6 +1,5 @@
-name: "Ping my site"
-description: "Check if a site is up"
-author: "leocardosoti@gmail.com"
+name: "Mixed"
+description: "Chece is up"
 branding:
   icon: 'activity'
   color: 'red'
@@ -10,9 +9,40 @@ inputs:
     description: "Site's url"
     required: true
     default: "oiluna.com"
+  source_file:
+    description: 'Source file from the origin directory'
+    required: true
+  destination_repo:
+    description: 'Destination repository'
+    required: true
+  destination_folder:
+    description: 'Directory to push the file to'
+    required: false
+  user_email:
+    description: 'Email for the git commit'
+    required: true
+  user_name:
+    description: 'GitHub username for the commit'
+    required: true
+  destination_branch:
+    description: 'branch to push file to, defaults to master'
+    required: false
+  destination_branch_create:
+    description: 'Destination branch to create for this commit'
+    required: false
+  commit_message:
+    description: 'A custom message for the commmit'
+    required: false
 
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
     - ${{ inputs.site }}
+    - ${{ inputs.source-file }}
+    - ${{ inputs.destination-repo }}
+    - ${{ inputs.destination-folder }}
+    - ${{ inputs.user-email }}
+    - ${{ inputs.destination-branch }}
+    - ${{ inputs.destination-branch-create }}
+    - ${{ inputs.commit-message }}
