@@ -6,7 +6,7 @@ FAIL_CODE=0
 check_status() {
     curl -sf "$INPUT_SITE" >/dev/null
 
-    if [ ! $? = ${FAIL_CODE} ]; then
+    if [ $? = ${FAIL_CODE} ]; then
         echo -e "<b>$INPUT_SITE</b> is <b style="color:green">online</b>" >> /index.html
     else
         echo -e "<b>$INPUT_SITE</b> is <b style="color:red">down</b>" >> /index.html
@@ -20,7 +20,7 @@ echo "<br>" >> /index.html
 check_status() {
     curl -sf "$INPUT_SITE2" >/dev/null
     
-    if [ ! $? = ${FAIL_CODE} ]; then
+    if [ $? = ${FAIL_CODE} ]; then
         echo -e "<b>$INPUT_SITE2</b> is <b style="color:green">online</b>" >> /index.html
     else
         echo -e "<b>$INPUT_SITE2</b> is <b style="color:red">down</b>" >> /index.html
@@ -34,7 +34,7 @@ echo "<br>" >> /index.html
 check_status() {
     curl -sf "$INPUT_SITE3" >/dev/null
 
-    if [ ! $? = ${FAIL_CODE} ]; then
+    if [ $? = ${FAIL_CODE} ]; then
         echo -e "<b>$INPUT_SITE3</b> is <b style="color:green">online</b>" >> /index.html
     else
         echo -e "<b>$INPUT_SITE3</b> is <b style="color:red">down</b>" >> /index.html
