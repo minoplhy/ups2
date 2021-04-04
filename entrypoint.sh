@@ -74,6 +74,7 @@ mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER
 cp -R "$INPUT_SOURCE_FILE" "$CLONE_DIR/$INPUT_DESTINATION_FOLDER"
 if [ -e /`date +%d-%m-%Y-%H%M`.txt ]
 then
+     mkdir -p $CLONE_DIR/downtime_archive
      cp -R "/`date +%d-%m-%Y-%H%M`.txt" "$CLONE_DIR/downtime_archive/"
 fi
 cd "$CLONE_DIR"
