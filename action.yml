@@ -9,6 +9,12 @@ inputs:
     description: "Site's url"
     required: true
     default: "oiluna.com"
+  site2:
+    description: "Site's url 2"
+    required: true
+  site3:
+    description: "Site's url 3"
+    required: true
   source_file:
     description: 'Source file from the origin directory'
     required: true
