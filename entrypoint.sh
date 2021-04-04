@@ -1,5 +1,6 @@
 #!/bin/bash
-
+echo "<h1> As of 'date'</h1>" >> index.html
+echo "<br>" >> index.html
 FAIL_CODE=6
 
 check_status() {
@@ -10,9 +11,9 @@ check_status() {
     curl -sf "${1}" >/dev/null
 
     if [ ! $? = ${FAIL_CODE} ]; then
-        echo -e "${LGREEN}${1} is online${NC}" >> /index.html
+        echo -e "<b>${1}</b> is <b style="color:green">online</b>" >> /index.html
     else
-        echo -e "${LRED}${1} is down${NC}" >> /index.html
+        echo -e "<b>${1}</b> is <b style="color:red">down</b>" >> /index.html
         exit 1
     fi
 }
