@@ -4,44 +4,44 @@ echo "<br>" >> /index.html
 FAIL_CODE=6
 
 check_status() {
-    curl -sf "${1}" >/dev/null
+    curl -sf "$INPUT_SITE" >/dev/null
 
     if [ ! $? = ${FAIL_CODE} ]; then
-        echo -e "<b>${1}</b> is <b style="color:green">online</b>" >> /index.html
+        echo -e "<b>$INPUT_SITE</b> is <b style="color:green">online</b>" >> /index.html
     else
-        echo -e "<b>${1}</b> is <b style="color:red">down</b>" >> /index.html
+        echo -e "<b>$INPUT_SITE</b> is <b style="color:red">down</b>" >> /index.html
         exit 1
     fi
 }
 
-check_status "${1}"
+check_status "$INPUT_SITE"
 
 check_status() {
-    curl -sf "${2}" >/dev/null
+    curl -sf "$INPUT_SITE2" >/dev/null
     
     if [ ! $? = ${FAIL_CODE} ]; then
-        echo -e "<b>${2}</b> is <b style="color:green">online</b>" >> /index.html
+        echo -e "<b>$INPUT_SITE2</b> is <b style="color:green">online</b>" >> /index.html
     else
-        echo -e "<b>${2}</b> is <b style="color:red">down</b>" >> /index.html
+        echo -e "<b>$INPUT_SITE2</b> is <b style="color:red">down</b>" >> /index.html
         exit 1
     fi
 }
 
-check_status "${2}"
+check_status "$INPUT_SITE2"
 
 check_status() {
-    curl -sf "${3}" >/dev/null
+    curl -sf "$INPUT_SITE3" >/dev/null
 
     if [ ! $? = ${FAIL_CODE} ]; then
-        echo -e "<b>${2}</b> is <b style="color:green">online</b>" >> /index.html
+        echo -e "<b>$INPUT_SITE3</b> is <b style="color:green">online</b>" >> /index.html
     else
-        echo -e "<b>${2}</b> is <b style="color:red">down</b>" >> /index.html
+        echo -e "<b>$INPUT_SITE3</b> is <b style="color:red">down</b>" >> /index.html
         exit 1
     fi
 
 }
 
-check_status "${3}"
+check_status "$INPUT_SITE3"
 
 
 
