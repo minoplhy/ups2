@@ -10,7 +10,6 @@ check_status() {
         echo -e "<b>$INPUT_SITE</b> is <b style="color:green">online</b>" >> /index.html
     else
         echo -e "<b>$INPUT_SITE</b> is <b style="color:red">down</b>" >> /index.html
-        exit 1
     fi
 }
 
@@ -24,7 +23,6 @@ check_status() {
         echo -e "<b>$INPUT_SITE2</b> is <b style="color:green">online</b>" >> /index.html
     else
         echo -e "<b>$INPUT_SITE2</b> is <b style="color:red">down</b>" >> /index.html
-        exit 1
     fi
 }
 
@@ -38,7 +36,6 @@ check_status() {
         echo -e "<b>$INPUT_SITE3</b> is <b style="color:green">online</b>" >> /index.html
     else
         echo -e "<b>$INPUT_SITE3</b> is <b style="color:red">down</b>" >> /index.html
-        exit 1
     fi
 
 }
