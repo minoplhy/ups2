@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "<h1> As of 'date'</h1>" >> index.html
+echo "<h1> As of 'date'</h1>" >> /index.html
 echo "<br>" >> index.html
 FAIL_CODE=6
 
