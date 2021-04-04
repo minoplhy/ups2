@@ -4,10 +4,6 @@ echo "<br>" >> /index.html
 FAIL_CODE=6
 
 check_status() {
-    LRED="\033[1;31m"   # Light Red
-    LGREEN="\033[1;32m" # Light Green
-    NC='\033[0m'        # No Color
-
     curl -sf "${1}" >/dev/null
 
     if [ ! $? = ${FAIL_CODE} ]; then
@@ -19,6 +15,35 @@ check_status() {
 }
 
 check_status "${1}"
+
+check_status() {
+    curl -sf "${2}" >/dev/null
+    
+    if [ ! $? = ${FAIL_CODE} ]; then
+        echo -e "<b>${2}</b> is <b style="color:green">online</b>" >> /index.html
+    else
+        echo -e "<b>${2}</b> is <b style="color:red">down</b>" >> /index.html
+        exit 1
+    fi
+}
+
+check_status "${2}"
+
+check_status() {
+    curl -sf "${3}" >/dev/null
+
+    if [ ! $? = ${FAIL_CODE} ]; then
+        echo -e "<b>${2}</b> is <b style="color:green">online</b>" >> /index.html
+    else
+        echo -e "<b>${2}</b> is <b style="color:red">down</b>" >> /index.html
+        exit 1
+    fi
+
+}
+
+check_status "${3}"
+
+
 
 set -e
 set -x
