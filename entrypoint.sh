@@ -15,6 +15,7 @@ check_status() {
 }
 
 check_status "$INPUT_SITE"
+echo "<br>" >> /index.html
 
 check_status() {
     curl -sf "$INPUT_SITE2" >/dev/null
@@ -28,6 +29,7 @@ check_status() {
 }
 
 check_status "$INPUT_SITE2"
+echo "<br>" >> /index.html
 
 check_status() {
     curl -sf "$INPUT_SITE3" >/dev/null
