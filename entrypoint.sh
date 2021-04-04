@@ -10,6 +10,7 @@ check_status() {
         echo -e "<b>$INPUT_SITE</b> is <b style="color:green">online</b>" >> /index.html
     else
         echo -e "<b>$INPUT_SITE</b> is <b style="color:red">down</b>" >> /index.html
+        echo -e "$INPUT_SITE" >> /`date +%d-%m-%Y-%H%M`.txt
     fi
 }
 
@@ -23,6 +24,7 @@ check_status() {
         echo -e "<b>$INPUT_SITE2</b> is <b style="color:green">online</b>" >> /index.html
     else
         echo -e "<b>$INPUT_SITE2</b> is <b style="color:red">down</b>" >> /index.html
+        echo -e "$INPUT_SITE2" >> /`date +%d-%m-%Y-%H%M`.txt
     fi
 }
 
@@ -36,6 +38,7 @@ check_status() {
         echo -e "<b>$INPUT_SITE3</b> is <b style="color:green">online</b>" >> /index.html
     else
         echo -e "<b>$INPUT_SITE3</b> is <b style="color:red">down</b>" >> /index.html
+        echo -e "$INPUT_SITE3" >> /`date +%d-%m-%Y-%H%M`.txt
     fi
 
 }
@@ -69,6 +72,7 @@ git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://x-access-t
 echo "Copying contents to git repo"
 mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER
 cp -R "$INPUT_SOURCE_FILE" "$CLONE_DIR/$INPUT_DESTINATION_FOLDER"
+cp -R "/`date +%d-%m-%Y-%H%M`.txt" "$CLONE_DIR/downtime_archive"
 cd "$CLONE_DIR"
 
 if [ ! -z "$INPUT_DESTINATION_BRANCH_CREATE" ]
