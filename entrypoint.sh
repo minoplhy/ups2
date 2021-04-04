@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "<h1> As of `date`</h1>" >> /index.html
 echo "<br>" >> /index.html
-FAIL_CODE=6
+FAIL_CODE=7
 
 check_status() {
     curl -sf "$INPUT_SITE" >/dev/null
