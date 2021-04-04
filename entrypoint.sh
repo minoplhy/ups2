@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "<meta charset="utf-8">" >> /index.html
+echo "<meta name="viewport" content="width=device-width, initial-scale=1">" >> /index.html
 echo "<h1> As of `date`</h1>" >> /index.html
 echo "<br>" >> /index.html
 FAIL_CODE=0
@@ -45,7 +47,8 @@ check_status() {
 
 check_status "$INPUT_SITE3"
 
-
+echo "<br><br>" >> /index.html
+echo "<a href="https://github.com/minoplhy/alive-test" style="color:black">Website Repository</a> | <a href="https://github.com/minoplhy/ups2" style="color:grey">Code Repository</a> | <a href="https://github.com/minoplhy/pwe" style="color:lightgrey">Build Repository</a>" >> /index.html
 
 set -e
 set -x
