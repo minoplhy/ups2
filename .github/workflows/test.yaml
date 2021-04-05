@@ -1,0 +1,25 @@
+name: Test Web status
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: build
+      uses: minoplhy/ups2@rvuo
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_KEY }}
+      with:
+        site: "https://privacytools.io"
+        site2: "https://adguard.com"
+        site3: "https://blognone.com"
+        source_file: '/index.html'
+        destination_repo: 'minoplhy/ups2'
+        destination_folder: 'TestBuild'
+        user_email: 'what@m21.kylz.nl'
+        user_name: 'TestBuild'
+        commit_message: 'TestBuild'
+    - name: Checkout
+      uses: actions/checkout@v2
+
