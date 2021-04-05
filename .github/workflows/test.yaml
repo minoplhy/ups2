@@ -15,8 +15,8 @@ jobs:
         site2: "https://adguard.com"
         site3: "https://blognone.com"
         source_file: '/index.html'
-        destination_repo: 'minoplhy/ups2'
-        destination_folder: 'TestBuild'
+        destination_repo: 'minoplhy/testrepo'
+        destination_folder: 'docs'
         user_email: 'what@m21.kylz.nl'
         user_name: 'TestBuild'
         commit_message: 'TestBuild'
