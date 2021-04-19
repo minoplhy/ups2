@@ -15,6 +15,9 @@ inputs:
   site3:
     description: "Site's url 3"
     required: true
+  site4:
+    description: "Site's url 4"
+    required: true
   source_file:
     description: 'Source file from the origin directory'
     required: true
