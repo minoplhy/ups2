@@ -12,7 +12,7 @@ check_status() {
         echo -e "<b>$INPUT_SITE</b> is <b style="color:green">online</b>" >> /index.html
     else
         echo -e "<b>$INPUT_SITE</b> is <b style="color:red">down</b>" >> /index.html
-        echo -e "$INPUT_SITE" >> /`date +%d-%m-%Y-%H%M`.txt
+        echo -e "$INPUT_SITE $?" >> /`date +%d-%m-%Y-%H%M`.txt
     fi
 }
 
@@ -26,7 +26,7 @@ check_status() {
         echo -e "<b>$INPUT_SITE2</b> is <b style="color:green">online</b>" >> /index.html
     else
         echo -e "<b>$INPUT_SITE2</b> is <b style="color:red">down</b>" >> /index.html
-        echo -e "$INPUT_SITE2" >> /`date +%d-%m-%Y-%H%M`.txt
+        echo -e "$INPUT_SITE2 $?" >> /`date +%d-%m-%Y-%H%M`.txt
     fi
 }
 
@@ -40,7 +40,7 @@ check_status() {
         echo -e "<b>$INPUT_SITE3</b> is <b style="color:green">online</b>" >> /index.html
     else
         echo -e "<b>$INPUT_SITE3</b> is <b style="color:red">down</b>" >> /index.html
-        echo -e "$INPUT_SITE3" >> /`date +%d-%m-%Y-%H%M`.txt
+        echo -e "$INPUT_SITE3 $?" >> /`date +%d-%m-%Y-%H%M`.txt
     fi
 
 }
