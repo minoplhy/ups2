@@ -46,21 +46,6 @@ check_status() {
 }
 
 check_status "$INPUT_SITE3"
-echo "<br>" >> /index.html
-
-check_status() {
-    curl -sf "$INPUT_SITE4" >/dev/null
-
-    if [ $? = ${FAIL_CODE} ]; then
-        echo -e "<b>$INPUT_SITE4</b> is <b style="color:green">online</b>" >> /index.html
-    else
-        echo -e "<b>$INPUT_SITE4</b> is <b style="color:red">down</b>" >> /index.html
-        echo -e "$INPUT_SITE4 $?" >> /`date +%d-%m-%Y-%H%M`.txt
-    fi
-
-}
-
-check_status "$INPUT_SITE4"
 
 echo "<br><br>" >> /index.html
 echo "<a href="https://github.com/minoplhy/alive-test" style="color:black">Website Repository</a> | <a href="https://github.com/minoplhy/ups2" style="color:grey">Code Repository</a> | <a href="https://github.com/minoplhy/pwe" style="color:lightgrey">Build Repository</a>" >> /index.html
