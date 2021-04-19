@@ -14,6 +14,7 @@ jobs:
         site: "https://privacytools.io"
         site2: "https://adguard.com"
         site3: "https://blognone.com"
+        site4: "https://invaild.kylz.nl"
         source_file: '/index.html'
         destination_repo: 'minoplhy/testrepo'
         destination_folder: 'docs'
